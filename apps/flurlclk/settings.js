@@ -40,7 +40,19 @@
         require("Storage").writeJSON("flurlclk.settings.json", settings);
     }
     
-    const availableActions = ['None', /*LANG*/'1st App', /*LANG*/'2nd App', /*LANG*/'3rd App', /*LANG*/'4th App', /*LANG*/'5th App', /*LANG*/'6th App'];
+    const availableActions = ['None',                 //0
+                              /*LANG*/'1st App',      //1
+                              /*LANG*/'2nd App',      //2
+                              /*LANG*/'3rd App',      //3
+                              /*LANG*/'4th App',      //4
+                              /*LANG*/'5th App',      //5
+                              /*LANG*/'6th App',      //6
+                              /*LANG*/'Play/Pause',   //7
+                              /*LANG*/'Vol up',       //8
+                              /*LANG*/'Vol down',     //9
+                              /*LANG*/'Next',         //10
+                              /*LANG*/'Previous',     //11
+                            ];
 
     E.showMenu({
         "": {

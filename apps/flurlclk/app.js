@@ -15,6 +15,7 @@ let tapTimeout;
 
 let doAction = function(action) {
   action = 0|action;  // in case action is undefined convert to 0
+  //console.log('action: '+action);
   switch(action) {
     // None
     case 0:
@@ -28,6 +29,31 @@ let doAction = function(action) {
     case 5:
     case 6:
       load(settings['app'+action]);
+      break;
+      
+    // play 
+    case 7:
+      sendCommand('playpause');
+      break;
+      
+    // vol up
+    case 8:
+      sendCommand('volumeup');
+      break;
+      
+    // vol down
+    case 9:
+      sendCommand('volumedown');
+      break;
+      
+    // nex
+    case 10:
+      sendCommand('next');
+      break;
+      
+    // previous
+    case 11:
+      sendCommand('previous');
       break;
     
     default:
@@ -47,6 +73,25 @@ let onTap = function() {
         doAction(settings.tapAction);
       }, settings.doubleTapDelay);
   }
+};
+
+//let tCommand = {};
+/**
+ * Send command and highlight corresponding control
+ * @param {string} command - "play"/"pause"/"next"/"previous"/"volumeup"/"volumedown"
+ */
+let sendCommand = function(command) {
+  //console.log('sendCommand: '+command);
+  Bluetooth.println(JSON.stringify({t: "music", n: command}));
+  // for control color
+  /*if (command in tCommand) {
+    clearTimeout(tCommand[command]);
+  }
+  tCommand[command] = setTimeout(function() {
+    delete tCommand[command];
+    drawControls();
+  }, 200);
+  drawControls();*/
 };
 
 let drawTimeout;
