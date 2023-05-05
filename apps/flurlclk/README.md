@@ -9,6 +9,8 @@ V0.1 let you define 6 apps you can open directly from the clock. Possible trigge
 - swipe left
 - swipe right
 
+V0.2 adds actions for controlling media players on the phone.
+
 ## Settings
 
 You can change settings by going to the global `Settings` app, then `App Settings`
